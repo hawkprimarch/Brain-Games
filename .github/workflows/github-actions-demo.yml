@@ -4,5 +4,5 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - make install
-      - Run make lint
+      run: make install
+      run: make lint
