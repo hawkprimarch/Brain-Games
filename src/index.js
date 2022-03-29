@@ -1,12 +1,9 @@
 import readlineSync from 'readline-sync';
 
-export const greetings = () => {
     console.log('Welcome to the Brain Games!');
     const name = readlineSync.question('May I have your name? ');
     const hello = (`${'Hello'}, ${name}${'!'}`);
     console.log(hello);
-    return [name];
-};
 
 //FIRST GAME
 
@@ -28,7 +25,6 @@ export const randomNumToUser = () => {
 };
 
 export const gameOne = (b = 3) => {
-    const [q] = greetings();
     for (let i = 0; i < b; i += 1) {
       const massive = randomNumToUser();
       const [x, y] = massive;
@@ -36,10 +32,10 @@ export const gameOne = (b = 3) => {
       const userAnswer = readlineSync.question('Your answer: ');
       if (userAnswer !== x) {
         console.log(`'${userAnswer}' ${'is wrong answer ;(. Correct answer was'} '${x}'.`);
-        console.log(`${"Let's try again, "}${q}${'!'}`);
+        console.log(`${"Let's try again, "}${name}${'!'}`);
         return;
       } console.log('Correct!');
-    } console.log(`${'Congratulations'}, ${q}${'!'}`);
+    } console.log(`${'Congratulations'}, ${name}${'!'}`);
 };
 
 //END
@@ -77,7 +73,6 @@ export const getRandomExampleToUser = () => {
 };
 
 export const gameTwo = (b = 3) => {
-    const [q] = greetings();
     for (let i = 0; i < b; i += 1) {
       const massiveTwo = getRandomExampleToUser();
       const [zet, det] = massiveTwo;
@@ -85,10 +80,51 @@ export const gameTwo = (b = 3) => {
       const userAnswer = readlineSync.question('Your answer: ');
       if (userAnswer !== String(zet)) {
         console.log(`'${userAnswer}' ${'is wrong answer ;(. Correct answer was'} '${zet}'.`);
-        console.log(`${"Let's try again, "}${q}${'!'}`);
+        console.log(`${"Let's try again, "}${name}${'!'}`);
         return;
       } console.log('Correct!');
-    } console.log(`${'Congratulations'}, ${q}${'!'}`);
+    } console.log(`${'Congratulations'}, ${name}${'!'}`);
 };
 
 //END
+
+//THIRD GAME
+
+export const thirdGameRules = () => {
+    console.log('Find the greatest common divisor of given numbers.');
+};
+
+export const RandomExampleToUserThree = () => {
+    let randomNum1GameThree = Math.floor(Math.random() * 100);
+    let randomNum2GameThree = Math.floor(Math.random() * 100);
+    function NOD () {
+        for (var x = arguments[0], i = 1; i < arguments.length; i++) {
+          var y = arguments[i];
+          while (x && y) {
+            x > y ? x %= y : y %= x;
+          }
+          x += y;
+        }
+        return x;
+      };
+
+    let correctAnswer = NOD(randomNum1GameThree, randomNum2GameThree)
+    const questionGameThree = (`Question: ${randomNum1GameThree} ${randomNum2GameThree}`);
+    return [questionGameThree, correctAnswer];
+};
+
+export const gameThree = (b = 3) => {
+    for (let i = 0; i < b; i += 1) {
+      const massiveThree = RandomExampleToUserThree();
+      const [threeGameQuestion, correctAnswers] = massiveThree;
+      console.log(threeGameQuestion);
+      const userAnswer = readlineSync.question('Your answer: ');
+      if (userAnswer !== String(correctAnswers)) {
+        console.log(`'${userAnswer}' ${'is wrong answer ;(. Correct answer was'} '${correctAnswers}'.`);
+        console.log(`${"Let's try again, "}${name}${'!'}`);
+        return;
+      } console.log('Correct!');
+    } console.log(`${'Congratulations'}, ${name}${'!'}`);
+};
+
+//END 
