@@ -5,16 +5,18 @@ const name = readlineSync.question('May I have your name? ');
 const hello = (`${'Hello'}, ${name}${'!'}`);
 console.log(hello);
 
-//FIRST GAME
+//  FIRST GAME
 
 export const firstGameRules = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 };
 
 export const getRandomNum = (min = 1, max = 20) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  let minn = 0;
+  let maxx = 0;
+  minn = Math.ceil(min);
+  maxx = Math.floor(max);
+  return Math.floor(Math.random() * (maxx - minn + 1)) + minn;
 };
 
 export const randomNumToUser = () => {
@@ -38,19 +40,17 @@ export const gameOne = (b = 3) => {
   } console.log(`${'Congratulations'}, ${name}${'!'}`);
 };
 
-//END
+//  END
 
-//SECOND GAME
+//  SECOND GAME
 
 export const secondGameRules = () => {
   console.log('What is the result of the expression?');
 };
-export const getRandomAction = (a = ['+','-','*']) => {
-return a[Math.floor(Math.random()*a.length)];
-};
+export const getRandomAction = (a = ['+', '-', '*']) => a[Math.floor(Math.random() * a.length)];
 
 export const getRandomExample = (a = getRandomNum(), b = getRandomNum(), c = getRandomAction()) => {
-  let result = 0
+  let result = 0;
   let massiveResult = [];
   if (c === '+') {
     result = a + b;
@@ -86,29 +86,25 @@ export const gameTwo = (b = 3) => {
   } console.log(`${'Congratulations'}, ${name}${'!'}`);
 };
 
-//END
+//  END
 
-//THIRD GAME
+//  THIRD GAME
 
 export const thirdGameRules = () => {
   console.log('Find the greatest common divisor of given numbers.');
 };
 
-export const RandomExampleToUserThree = () => {
-  let randomNum1GameThree = Math.floor(Math.random() * 100);
-  let randomNum2GameThree = Math.floor(Math.random() * 100);
-  function NOD () {
-    for (var x = arguments[0], i = 1; i < arguments.length; i++) {
-      var y = arguments[i];
-      while (x && y) {
-        x > y ? x %= y : y %= x;
-      }
-      x += y;
+const RandomExampleToUserThree = () => {
+  const randomNum1GameThree = Math.floor(Math.random() * 100);
+  const randomNum2GameThree = Math.floor(Math.random() * 100);
+  const NOD = (a, b) => {
+    if (a === 0) {
+      return b;
     }
-    return x;
+    return NOD(b % a, a);
   };
 
-  let correctAnswer = NOD(randomNum1GameThree, randomNum2GameThree);
+  const correctAnswer = NOD(randomNum1GameThree, randomNum2GameThree);
   const questionGameThree = (`Question: ${randomNum1GameThree} ${randomNum2GameThree}`);
   return [questionGameThree, correctAnswer];
 };
@@ -127,22 +123,24 @@ export const gameThree = (b = 3) => {
   } console.log(`${'Congratulations'}, ${name}${'!'}`);
 };
 
-//END 
+//  END
 
-//FOURTH GAME
+//  FOURTH GAME
 
 export const fourGameRules = () => {
   console.log('What number is missing in the progression?');
 };
 
 export const getRandomNumfour = (min = 1, max = 100) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  let minn = 0;
+  let maxx = 0;
+  minn = Math.ceil(min);
+  maxx = Math.floor(max);
+  return Math.floor(Math.random() * (maxx - minn + 1)) + minn;
 };
 
 export const RandomExampleToUserFour = () => {
-  let collection = [];
+  const collection = [];
   const randomStart = getRandomNumfour();
   let result = randomStart;
   const randomLength = getRandomNumfour(5, 10);
@@ -172,18 +170,20 @@ export const gameFour = (b = 3) => {
   } console.log(`${'Congratulations'}, ${name}${'!'}`);
 };
 
-//END 
+//  END
 
-//FIFTH GAME
+//  FIFTH GAME
 
 export const fiveGameRules = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 };
 
 export const getRandomNumFive = (min = 0, max = 100) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  let minn = 0;
+  let maxx = 0;
+  minn = Math.ceil(min);
+  maxx = Math.floor(max);
+  return Math.floor(Math.random() * (maxx - minn + 1)) + minn;
 };
 
 export const RandomExampleToUserFive = () => {
@@ -191,14 +191,17 @@ export const RandomExampleToUserFive = () => {
   let correctAnswerFive = '';
   const isPrime = (num = randomNumFive) => {
     if (num <= 1) {
-      return correctAnswerFive = 'no';
+      correctAnswerFive = 'no';
+      return correctAnswerFive;
     }
 
     for (let counter = 2; counter < num; counter += 1) {
       if (num % counter === 0) {
-        return correctAnswerFive = 'no'
+        correctAnswerFive = 'no';
+        return correctAnswerFive;
       }
-    } return correctAnswerFive = 'yes';
+    } correctAnswerFive = 'yes';
+    return correctAnswerFive;
   };
   isPrime();
   const questionGameFour = (`Question: ${randomNumFive}`);
@@ -219,4 +222,4 @@ export const gameFive = (b = 3) => {
   } console.log(`${'Congratulations'}, ${name}${'!'}`);
 };
 
-//END
+//  END
