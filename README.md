@@ -2,7 +2,7 @@
 [![Actions Status](https://github.com/hawkprimarch/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/hawkprimarch/frontend-project-lvl1/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 [![Linter Status](https://github.com/hawkprimarch/frontend-project-lvl1/actions/workflows/github-actions-demo/badge.svg)](https://github.com/hawkprimarch/frontend-project-lvl1/actions)
-[![asciicast](https://asciinema.org/a/kzUlKR5aoNJ3jNJ8aUqUpm8r2.svg)](https://asciinema.org/a/kzUlKR5aoNJ3jNJ8aUqUpm8r2)
+[![asciicast](https://asciinema.org/a/yzXcxYQt9u4XKlGMjAEDZwkYn.svg)](https://asciinema.org/a/yzXcxYQt9u4XKlGMjAEDZwkYn)
 [![asciicast](https://asciinema.org/a/RP8GV7FdjkKH2khwKoxVpIxaF.svg)](https://asciinema.org/a/RP8GV7FdjkKH2khwKoxVpIxaF)
 [![asciicast](https://asciinema.org/a/sdjYMN3FGOh9FcnlgkMjesMp9.svg)](https://asciinema.org/a/sdjYMN3FGOh9FcnlgkMjesMp9)
 [![asciicast](https://asciinema.org/a/L7gJZnQ4dHtdyGLFm3h5RkNAf.svg)](https://asciinema.org/a/L7gJZnQ4dHtdyGLFm3h5RkNAf)

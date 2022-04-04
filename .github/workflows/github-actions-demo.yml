@@ -1,25 +1,23 @@
-name: GitHub Actions Demo
+name: Linter-check
 on: push
 jobs:
-  build:
-
+  # Set the job key. The key is displayed as the job name
+  # when a job name is not provided
+  make-lint:
+    # Name the Job
+    name: Runs super-linter
+    # Set the type of machine to run on
     runs-on: ubuntu-latest
 
-    strategy:
-
-      matrix:
-        node-version: [14.x]
-
     steps:
+      # Checks out a copy of your repository on the ubuntu-latest machine
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - uses: actions/checkout@v2
+      # installing dependencies
+      - name: Install Dependencies
+        run: make install
 
-      - name: Use Node.js ${{ matrix.node-version }}
-
-        uses: actions/setup-node@v2
-
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: make install
-      - run: make lint
+      # Runs the Linter action
+      - name: Run super-linter
+        run: make lint
