@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { gameThree, thirdGameRules } from '../src/index.js';
+import { brainGcdLogic, brainGcdRules } from '../games-logic/brain-gcd-logic.js';
+import { generalLogic } from '../src/index.js';
 
-thirdGameRules();
-gameThree();
+generalLogic(brainGcdRules, brainGcdLogic);
