@@ -1,4 +1,5 @@
 import getRandomNum from '../src/utilies.js';
+import getGeneralLogic from '../src/index.js';
 
 export const brainCalcRules = () => {
   console.log('What is the result of the expression?');
@@ -27,3 +28,5 @@ export const brainCalcLogic = () => {
   const gameQuestion = (`${'Question: '}${x}`);
   return [gameQuestion, correctAnswer];
 };
+
+export default () => getGeneralLogic(brainCalcRules, brainCalcLogic);

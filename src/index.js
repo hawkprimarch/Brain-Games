@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable no-undef */
 import readlineSync from 'readline-sync';
 
 const greetings = () => {
@@ -10,7 +8,7 @@ const greetings = () => {
   return name;
 };
 
-export const generalLogic = (gameRules, gameLogic) => {
+const generalLogic = (gameRules, gameLogic) => {
   const name = greetings();
   gameRules();
   for (let i = 0; i < 3; i += 1) {
@@ -25,3 +23,5 @@ export const generalLogic = (gameRules, gameLogic) => {
     } console.log('Correct!');
   } console.log(`${'Congratulations'}, ${name}${'!'}`);
 };
+
+export default generalLogic;

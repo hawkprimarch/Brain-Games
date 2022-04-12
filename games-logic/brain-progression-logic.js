@@ -1,3 +1,5 @@
+import getGeneralLogic from '../src/index.js';
+
 export const brainProgressionRules = () => {
   console.log('What number is missing in the progression?');
 };
@@ -26,3 +28,5 @@ export const brainProgressionLogic = () => {
   const gameQuestion = (`Question: ${collection.join(' ')}`);
   return [gameQuestion, correctAnswer];
 };
+
+export default () => getGeneralLogic(brainProgressionRules, brainProgressionLogic);

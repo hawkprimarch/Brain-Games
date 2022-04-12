@@ -1,3 +1,5 @@
+import getGeneralLogic from '../src/index.js';
+
 export const brainGcdRules = () => {
   console.log('Find the greatest common divisor of given numbers.');
 };
@@ -16,3 +18,5 @@ export const brainGcdLogic = () => {
   const gameQuestion = (`Question: ${randomNum1GameThree} ${randomNum2GameThree}`);
   return [gameQuestion, correctAnswer];
 };
+
+export default () => getGeneralLogic(brainGcdRules, brainGcdLogic);

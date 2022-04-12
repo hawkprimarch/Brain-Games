@@ -1,3 +1,5 @@
+import getGeneralLogic from '../src/index.js';
+
 export const brainPrimeRules = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 };
@@ -31,3 +33,5 @@ export const brainPrimeLogic = () => {
   const gameQuestion = (`Question: ${randomNumFive}`);
   return [gameQuestion, correctAnswer];
 };
+
+export default () => getGeneralLogic(brainPrimeRules, brainPrimeLogic);

@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { brainProgressionLogic, brainProgressionRules } from '../games-logic/brain-progression-logic.js';
-import { generalLogic } from '../src/index.js';
+import brainProgressionGame from '../games-logic/brain-progression-logic.js';
 
-generalLogic(brainProgressionRules, brainProgressionLogic);
+brainProgressionGame();
