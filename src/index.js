@@ -8,20 +8,27 @@ const greetings = () => {
   return name;
 };
 
-const generalLogic = (gameRules, gameLogic) => {
+const getGeneralLogic = (gameRules, gameLogic) => {
   const name = greetings();
   gameRules();
-  for (let i = 0; i < 3; i += 1) {
+  const numberOfGameRounds = 3;
+
+  for (let i = 0; i < numberOfGameRounds; i += 1) {
     const questionAndAnswer = gameLogic();
-    const [gameQuestion, correctAnswer] = questionAndAnswer;
+    const [randomQuestion, correctAnswer] = questionAndAnswer;
+    const gameQuestion = (`${'Question: '}${randomQuestion}`);
+
     console.log(gameQuestion);
+
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== String(correctAnswer)) {
       console.log(`'${userAnswer}' ${'is wrong answer ;(. Correct answer was'} '${correctAnswer}'.`);
       console.log(`${"Let's try again, "}${name}${'!'}`);
       return;
-    } console.log('Correct!');
-  } console.log(`${'Congratulations'}, ${name}${'!'}`);
+    }
+    console.log('Correct!');
+  }
+  console.log(`${'Congratulations'}, ${name}${'!'}`);
 };
 
-export default generalLogic;
+export default getGeneralLogic;

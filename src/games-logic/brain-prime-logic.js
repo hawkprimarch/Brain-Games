@@ -1,10 +1,10 @@
-import getGeneralLogic from '../src/index.js';
+import getGeneralLogic from '../index.js';
 
-export const brainPrimeRules = () => {
+const getBrainPrimeRules = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 };
 
-export const getRandomNumFive = (min = 0, max = 100) => {
+const getRandomNumFive = (min = 0, max = 100) => {
   let minn = 0;
   let maxx = 0;
   minn = Math.ceil(min);
@@ -12,7 +12,7 @@ export const getRandomNumFive = (min = 0, max = 100) => {
   return Math.floor(Math.random() * (maxx - minn + 1)) + minn;
 };
 
-export const brainPrimeLogic = () => {
+const getBrainPrimeLogic = () => {
   const randomNumFive = getRandomNumFive();
   let correctAnswer = '';
   const isPrime = (num = randomNumFive) => {
@@ -30,8 +30,8 @@ export const brainPrimeLogic = () => {
     return correctAnswer;
   };
   isPrime();
-  const gameQuestion = (`Question: ${randomNumFive}`);
-  return [gameQuestion, correctAnswer];
+  const randomQuestion = (randomNumFive);
+  return [randomQuestion, correctAnswer];
 };
 
-export default () => getGeneralLogic(brainPrimeRules, brainPrimeLogic);
+export default () => getGeneralLogic(getBrainPrimeRules, getBrainPrimeLogic);

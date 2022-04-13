@@ -1,10 +1,10 @@
-import getGeneralLogic from '../src/index.js';
+import getGeneralLogic from '../index.js';
 
-export const brainProgressionRules = () => {
+const getBrainProgressionRules = () => {
   console.log('What number is missing in the progression?');
 };
 
-export const getRandomNumfour = (min = 1, max = 100) => {
+const getRandomNumfour = (min = 1, max = 100) => {
   let minn = 0;
   let maxx = 0;
   minn = Math.ceil(min);
@@ -12,7 +12,7 @@ export const getRandomNumfour = (min = 1, max = 100) => {
   return Math.floor(Math.random() * (maxx - minn + 1)) + minn;
 };
 
-export const brainProgressionLogic = () => {
+const getBrainProgressionLogic = () => {
   const collection = [];
   const randomStart = getRandomNumfour();
   let result = randomStart;
@@ -25,8 +25,8 @@ export const brainProgressionLogic = () => {
   const randomIndex = getRandomNumfour(0, randomLength - 1);
   const correctAnswer = collection[randomIndex];
   collection[randomIndex] = '..';
-  const gameQuestion = (`Question: ${collection.join(' ')}`);
-  return [gameQuestion, correctAnswer];
+  const randomQuestion = (`${collection.join(' ')}`);
+  return [randomQuestion, correctAnswer];
 };
 
-export default () => getGeneralLogic(brainProgressionRules, brainProgressionLogic);
+export default () => getGeneralLogic(getBrainProgressionRules, getBrainProgressionLogic);
