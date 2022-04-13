@@ -1,28 +1,21 @@
 import getGeneralLogic from '../index.js';
+import getRandomNum from '../utilities.js';
 
 const getBrainPrimeRules = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 };
 
-const getRandomNumFive = (min = 0, max = 100) => {
-  let minn = 0;
-  let maxx = 0;
-  minn = Math.ceil(min);
-  maxx = Math.floor(max);
-  return Math.floor(Math.random() * (maxx - minn + 1)) + minn;
-};
-
 const getBrainPrimeLogic = () => {
-  const randomNumFive = getRandomNumFive();
+  const randomNum = getRandomNum(0, 100);
   let correctAnswer = '';
-  const isPrime = (num = randomNumFive) => {
-    if (num <= 1) {
+  const isPrime = () => {
+    if (randomNum <= 1) {
       correctAnswer = 'no';
       return correctAnswer;
     }
 
-    for (let counter = 2; counter < num; counter += 1) {
-      if (num % counter === 0) {
+    for (let counter = 2; counter < randomNum; counter += 1) {
+      if (randomNum % counter === 0) {
         correctAnswer = 'no';
         return correctAnswer;
       }
@@ -30,7 +23,7 @@ const getBrainPrimeLogic = () => {
     return correctAnswer;
   };
   isPrime();
-  const randomQuestion = (randomNumFive);
+  const randomQuestion = (randomNum);
   return [randomQuestion, correctAnswer];
 };
 
