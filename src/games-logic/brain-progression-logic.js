@@ -11,6 +11,7 @@ const getBrainProgressionLogic = () => {
   let result = randomStart;
   const randomLength = getRandomNum(5, 10);
   const randomProgression = getRandomNum(3, 12);
+
   for (let l = 0; l < randomLength; l += 1) {
     result += randomProgression;
     collection.push(result);

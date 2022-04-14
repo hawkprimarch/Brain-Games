@@ -5,25 +5,19 @@ const getBrainPrimeRules = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 };
 
-const getBrainPrimeLogic = () => {
-  const randomNum = getRandomNum(0, 100);
-  let correctAnswer = '';
-  const isPrime = () => {
-    if (randomNum <= 1) {
-      correctAnswer = 'no';
-      return correctAnswer;
+const isPrime = (number) => {
+  for (let h = 2; h <= number / 2; h += 1) {
+    if (number < 2 || number % h === 0) {
+      return false;
     }
+  }
+  return true;
+};
 
-    for (let counter = 2; counter < randomNum; counter += 1) {
-      if (randomNum % counter === 0) {
-        correctAnswer = 'no';
-        return correctAnswer;
-      }
-    } correctAnswer = 'yes';
-    return correctAnswer;
-  };
-  isPrime();
-  const randomQuestion = (randomNum);
+const getBrainPrimeLogic = () => {
+  const randomNumber = getRandomNum(0, 100);
+  const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
+  const randomQuestion = randomNumber;
   return [randomQuestion, correctAnswer];
 };
 

@@ -14,8 +14,7 @@ const getGeneralLogic = (gameRules, gameLogic) => {
   const numberOfGameRounds = 3;
 
   for (let i = 0; i < numberOfGameRounds; i += 1) {
-    const questionAndAnswer = gameLogic();
-    const [randomQuestion, correctAnswer] = questionAndAnswer;
+    const [randomQuestion, correctAnswer] = gameLogic();
     const gameQuestion = (`${'Question: '}${randomQuestion}`);
 
     console.log(gameQuestion);
