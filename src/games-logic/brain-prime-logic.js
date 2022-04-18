@@ -13,7 +13,7 @@ const isPrime = (number) => {
 };
 
 const getBrainPrimeLogic = () => {
-  const randomNumber = getRandomNum(0, 100);
+  const randomNumber = getRandomNum(1, 100);
   const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
   const randomQuestion = randomNumber;
   return [randomQuestion, correctAnswer];
