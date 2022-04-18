@@ -1,9 +1,7 @@
 import getRandomNum from '../utilities.js';
 import getGeneralLogic from '../index.js';
 
-const getBrainEvenRules = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-};
+const termsOfIsEvenGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const getBrainEvenLogic = () => {
   const randomNum = getRandomNum();
@@ -11,4 +9,4 @@ const getBrainEvenLogic = () => {
   return [randomNum, correctAnswer];
 };
 
-export default () => getGeneralLogic(getBrainEvenRules, getBrainEvenLogic);
+export default () => getGeneralLogic(termsOfIsEvenGame, getBrainEvenLogic);

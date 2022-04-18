@@ -1,9 +1,7 @@
 import getGeneralLogic from '../index.js';
 import getRandomNum from '../utilities.js';
 
-const getBrainGcdRules = () => {
-  console.log('Find the greatest common divisor of given numbers.');
-};
+const termsOfGcdGame = 'Find the greatest common divisor of given numbers.';
 
 const getGcd = (a, b) => {
   if (a === 0) {
@@ -21,4 +19,4 @@ const getBrainGcdLogic = () => {
   return [randomQuestion, correctAnswer];
 };
 
-export default () => getGeneralLogic(getBrainGcdRules, getBrainGcdLogic);
+export default () => getGeneralLogic(termsOfGcdGame, getBrainGcdLogic);

@@ -1,9 +1,7 @@
 import getRandomNum from '../utilities.js';
 import getGeneralLogic from '../index.js';
 
-const getBrainCalcRules = () => {
-  console.log('What is the result of the expression?');
-};
+const termsOfCalcGame = 'What is the result of the expression?';
 
 const getRandomOperator = () => {
   const operatorsColl = ['+', '-', '*'];
@@ -43,4 +41,4 @@ const getBrainCalcLogic = () => {
   return [randomQuestion, correctAnswer];
 };
 
-export default () => getGeneralLogic(getBrainCalcRules, getBrainCalcLogic);
+export default () => getGeneralLogic(termsOfCalcGame, getBrainCalcLogic);

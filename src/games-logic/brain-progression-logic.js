@@ -1,9 +1,7 @@
 import getRandomNum from '../utilities.js';
 import getGeneralLogic from '../index.js';
 
-const getBrainProgressionRules = () => {
-  console.log('What number is missing in the progression?');
-};
+const termsOfProgressionGame = 'What number is missing in the progression?';
 
 const getBrainProgressionLogic = () => {
   const collection = [];
@@ -23,4 +21,4 @@ const getBrainProgressionLogic = () => {
   return [randomQuestion, correctAnswer];
 };
 
-export default () => getGeneralLogic(getBrainProgressionRules, getBrainProgressionLogic);
+export default () => getGeneralLogic(termsOfProgressionGame, getBrainProgressionLogic);
